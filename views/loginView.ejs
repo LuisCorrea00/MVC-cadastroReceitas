@@ -1,0 +1,30 @@
+<form
+    method="post"
+    action="/login"
+    class="d-flex flex-column align-items-center w-50 mx-auto gap-4 mt-5"
+>
+    <div class="w-100 d-flex">
+        <label for="nome" class="w-25">Usuário:</label>
+        <input
+            type="text"
+            name="nome"
+            placeholder="Digite o usuário..."
+            class="form-control flex-grow-1 flex-shrink-1"
+            style="border: solid black 1px;"
+        />
+    </div>
+    <div class="w-100 d-flex">
+        <label for="senha" class="w-25">Senha:</label>
+        <input
+            type="password"
+            name="senha"
+            placeholder="Digite a senha..."
+            class="form-control flex-grow-1 flex-shrink-1"
+            style="border: solid black 1px;"
+        />
+    </div>
+
+    <button type="submit" class="btn btn-dark px-5">Entrar</button>
+
+    <span>Não possui uma conta? <a href="/cadastro">Cadastre-se</a></span>
+</form>

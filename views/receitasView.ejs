@@ -1,0 +1,82 @@
+<div class="d-flex justify-content-between">
+    <!-- add receita -->
+    <form
+        action="/receita"
+        method="POST"
+        enctype="multipart/form-data"
+        class="d-flex flex-column gap-4"
+        style="width: 48%"
+    >
+        <h2 class="text-center">Adicionar Receita</h2>
+        <input 
+            type="text" 
+            name="titulo" 
+            placeholder="Nome da receita..." 
+            class="form-control"
+            style="border: solid black 1px;"
+            required
+        />
+        <input
+            type="text"
+            name="ingredientes"
+            placeholder="Ingredientes da receita..."
+            class="form-control"
+            style="border: solid black 1px;"
+            required
+        />
+        <input
+            type="text"
+            name="modoPreparo"
+            placeholder="Modo de preparo da receita..."
+            class="form-control"
+            style="border: solid black 1px;"
+            required
+        />
+        <div>
+            <label for="filetoupload">Foto do prato</label>
+            <input 
+                type="file" 
+                name="filetoupload" 
+                class="form-control"  
+                style="border: solid black 1px;" 
+                required
+            />
+        </div>
+        <button type="submit" class="btn btn-outline-dark">
+            Adicionar receita
+        </button>
+    </form>
+    <!-- ver receitas -->
+    <div class="d-flex flex-column gap-3" style="width: 48%">
+        <h2 class="text-center">Receitas</h2>
+
+        <% receitas.forEach((receita) => { %>
+        <div
+            class="d-flex align-items-center justify-content-between border-secondary-subtle p-1 border rounded"
+        >
+            <a
+                class="text-decoration-none h2 ms-3"
+                href="/receita/<%= receita.id_receita %>"
+                ><%= receita.titulo %></a
+            >
+
+            <div class="d-flex">
+                <form method="POST" action="/receita/delete" class="me-2">
+                    <input
+                        type="hidden"
+                        name="id"
+                        value="<%= receita.id_receita %>"
+                    />
+                    <button type="submit" class="btn p-0">
+                        <i class="bi bi-trash3 h3 text-danger"></i>
+                    </button>
+                </form>
+                <a
+                    href="/receita/editar/<%= receita.id_receita %>">
+                    <i class="bi bi-pencil-square h3 text-black"></i
+                ></a>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+</div>

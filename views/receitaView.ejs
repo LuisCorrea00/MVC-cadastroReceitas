@@ -1,0 +1,26 @@
+<div class="mt-2 d-flex flex-column">
+    <h1 class="text-center"><u><%= receita.titulo %></u></h1>
+
+    <div class="ms-3 mt-3">
+        <h3>Ingredientes:</h4>
+        <p class="fs-5"><%= receita.ingredientes %></p>
+    </div>
+
+    <div class="ms-3 mt-3">
+        <h3>Modo de Preparo</h3>
+        <p class="fs-5"><%= receita.modoPreparo %></p>
+    </div>
+
+    <div class="ms-3 mt-3">
+        <h3>Foto do prato:</h3>
+        <div class="text-center">
+            <img src="/uploads/<%- receita.foto %>" class="img-thumbnail" style="max-width: 30vw;">
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a class="text-decoration-none" href="/receitas">
+            <button class="btn btn-dark btn-lg">Voltar</button>
+        </a>
+    </div>
+</div>
